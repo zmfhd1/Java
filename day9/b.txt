@@ -1,0 +1,49 @@
+package day9;
+
+import java.util.Scanner;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("키보드로 정수 2개를 입력해 보세요");
+		if(s.hasNextInt()) {
+			int first = s.nextInt();// 정수 입력시에만 가능
+			int second = s.nextInt();
+			System.out.println(first + second);
+		}
+		s.nextLine();//10 20  뒤 입력 엔터 읽어라
+		System.out.println("키보드로 한글 데이터를 입력해 보세요");
+		String word = s.nextLine();
+		System.out.println(word);
+		
+		
+	}
+
+}
+package day9;
+
+import java.io.IOException;
+
+public class SystemInTest {
+
+	public static void main(String[] args)  {
+		try {	
+			while(true) {
+				int result = System.in.read();//jdk 설치되면서 키보드 입력 구현 제공. 1바이트
+				// 4BYTE 정수 result 에 1바이트만 저장. 문자의 코드값
+				if((char)result == '\n' ) { break; }
+				//if(result == 13) {break; }
+				System.out.println( result );
+			}
+			
+		//	키보드입력 데이터 그대로 출력 (연산 x - int, double  타입)
+		// 한글데이터 표현x (String 타입)
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}
